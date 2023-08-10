@@ -1,8 +1,6 @@
 <table class="fixed" border="0">
     <col width="1000px" /><col width="500px" />
-    <tr><td>
-        <h2>ESP32 Private Portable File Server</h2>
-    </td><td>
+    <td>
         <table border="0">
             <tr>
                 <td>
@@ -29,12 +27,30 @@
 <!-- SKELETON WEB PAGE -->
 <div class="container">
     <div class="row">
-      <div class="one-half column" style="margin-top: 25%">
-        <h4>ESP32 Private Portable File Server</h4>
-        <p>Select file and click "Upload". Visit GitHub <a href="https://github.com/alexandrebobkov/ESP32-FileServer-ESP-IDF">ESP32 File Server</a>.</p>
-      </div>
+        <div class="twelve columns">
+            <h4>ESP32 Private Portable File Server</h4>
+        </div>
     </div>
-  </div>
+    <div class="row">
+        <div class="one-half column" style="margin-top: 25%">
+            <h4>ESP32 Private Portable File Server</h4>
+            <p>Select file and click "Upload". Visit GitHub for more reference at <a href="https://github.com/alexandrebobkov/ESP32-FileServer-ESP-IDF">ESP32 File Server</a>.</p>
+        </div>
+        <div class="one-half column" style="margin-top: 25%">
+            <p>Select file and click "Upload". Visit GitHub for more reference at <a href="https://github.com/alexandrebobkov/ESP32-FileServer-ESP-IDF">ESP32 File Server</a>.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="one-half column">
+            <h5>Which file to upload?</h5>
+            <input id="newfile" type="file" onchange="setpath()" style="width:100%;">
+        </div>
+        <div class="one-half column">
+            <h5>Specify path on server</h5>
+            <button id="upload" type="button" onclick="upload()">Upload</button>
+        </div>
+    </div>
+</div>
 <script>
 function setpath() {
     var default_path = document.getElementById("newfile").files[0].name;

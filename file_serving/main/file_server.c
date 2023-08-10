@@ -235,6 +235,7 @@ static esp_err_t download_get_handler(httpd_req_t *req)
         if (strcmp(filename, "/index.html") == 0) {
             return index_html_get_handler(req);
         } else if (strcmp(filename, "/favicon.ico") == 0) {
+        //} else if (strcmp(filename, "/favicon.ico") == 0) {
             return favicon_get_handler(req);
         }
         ESP_LOGE(TAG, "Failed to stat file : %s", filepath);

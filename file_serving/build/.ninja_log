@@ -1130,3 +1130,8 @@
 1032	1609	7133895895002802	esp-idf/main/libmain.a	9575fd8fbdd0cd02
 1613	7305	7133895951576641	esp-idf/esp_system/ld/sections.ld	c2e6df5fb62530cd
 1613	7305	7133895951576641	C:/Users/activcount/github/ESP32-FileServer-ESP-IDF/file_serving/build/esp-idf/esp_system/ld/sections.ld	c2e6df5fb62530cd
+7305	12705	7133896006187454	file_server.elf	48fc41d66e58fb51
+12706	13190	7133896011335948	.bin_timestamp	266446212810b36c
+12706	13190	7133896011335948	C:/Users/activcount/github/ESP32-FileServer-ESP-IDF/file_serving/build/.bin_timestamp	266446212810b36c
+13191	13338	0	esp-idf/esptool_py/CMakeFiles/app_check_size	f31afd20fae750f5
+13191	13338	0	C:/Users/activcount/github/ESP32-FileServer-ESP-IDF/file_serving/build/esp-idf/esptool_py/CMakeFiles/app_check_size	f31afd20fae750f5

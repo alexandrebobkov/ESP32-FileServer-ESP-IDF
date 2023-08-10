@@ -119,7 +119,7 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
     "table {border-collapse: collapse;border-spacing: 0;}"
     "td,th {padding: 0;}"
     ".container {position: relative;width: 100%;max-width: 960px;margin: 0 auto;padding: 0 20px;box-sizing: border-box;}"
-    ".column,.columns {width: 100%;float: left;box-sizing: border-box; }"
+    ".column,.columns {width: 100%;float: left;box-sizing: border-box;margin-bottom: 1.5rem; }"
     "@media (min-width: 400px) {.container {width: 85%;padding: 0; }}"
     "@media (min-width: 550px) {"
     ".container {width: 80%; }.column,.columns {margin-left: 4%;}.column:first-child,.columns:first-child {margin-left: 0;}"
@@ -161,13 +161,16 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
         "<col width=\"800px\" /><col width=\"300px\" /><col width=\"300px\" /><col width=\"100px\" />"
         "<thead><tr><th>Name</th><th>Type</th><th>Size (Bytes)</th><th>Delete</th></tr></thead>"
         "<tbody>");*/
-    httpd_resp_sendstr_chunk(req,        
-        "<div class=\"row\" style=\"margin-top: 2rem\">"
+    httpd_resp_sendstr_chunk(req,   
+        //"<div class=\"container\">"     
+        "<hr>"
+        "<div class=\"row\">"
         "<div class=\"six columns\" style=\"text-align: center;\"><b>Name</b></div>"
-        "<div class=\"two columns\">Type</div>"
-        "<div class=\"two columns\">Size (Bytes)</div>"
-        "<div class=\"two columns\">Delete</div>"
+        "<div class=\"two columns\" style=\"text-align: center;\"><b>Type</b></div>"
+        "<div class=\"two columns\" style=\"text-align: center;\"><b>Size (Bytes)</b></div>"
+        "<div class=\"two columns\" style=\"text-align: center;\"><b>Delete</b></div>"
         "</div>"
+        "<hr>"
     );
 
     /* Iterate over all files / folders and fetch their names and sizes */
@@ -182,7 +185,7 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
         sprintf(entrysize, "%ld", entry_stat.st_size);
         ESP_LOGI(TAG, "Found %s : %s (%s bytes)", entrytype, entry->d_name, entrysize);
 
-        /* Send chunk of HTML file containing table entries with file name and size */
+        // Send chunk of HTML file containing table entries with file name and size 
         //httpd_resp_sendstr_chunk(req, "<tr><td><a href=\"");
         // Display file name
         httpd_resp_sendstr_chunk(req, "<div class=\"row\"><div class=\"six columns\"><a href=\"");
@@ -194,10 +197,10 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
         httpd_resp_sendstr_chunk(req, "\">");
         httpd_resp_sendstr_chunk(req, entry->d_name);
         // Display file type
-        httpd_resp_sendstr_chunk(req, "</a></div><div class=\"two columns\">");
+        httpd_resp_sendstr_chunk(req, "</a></div><div class=\"two columns\" style=\"text-align: center;\">");
         httpd_resp_sendstr_chunk(req, entrytype);
         // Display file size
-        httpd_resp_sendstr_chunk(req, "</div><div class=\"two columns\">");
+        httpd_resp_sendstr_chunk(req, "</div><div class=\"two columns\" style=\"text-align: right;\">");
         httpd_resp_sendstr_chunk(req, entrysize);
         // Display file delete button
         httpd_resp_sendstr_chunk(req, "</div><div class=\"two columns\">");
@@ -210,12 +213,13 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
         httpd_resp_sendstr_chunk(req, "</div></div>\n");
     }
     closedir(dir);
+    httpd_resp_sendstr_chunk(req, "<hr>\n");
 
     /* Finish the file list table */
-    httpd_resp_sendstr_chunk(req, "</tbody></table>");
+    //httpd_resp_sendstr_chunk(req, "</tbody></table>");
 
     /* Send remaining chunk of HTML file to complete it */
-    httpd_resp_sendstr_chunk(req, "</body></html>");
+    httpd_resp_sendstr_chunk(req, "</div></body></html>");
 
     /* Send empty chunk to signal HTTP response completion */
     httpd_resp_sendstr_chunk(req, NULL);

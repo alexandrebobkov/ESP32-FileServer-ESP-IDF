@@ -31,8 +31,8 @@
 
 /* Max size of an individual file. Make sure this
  * value is same as that set in upload_script.html */
-#define MAX_FILE_SIZE   (200*1024) // 200 KB
-#define MAX_FILE_SIZE_STR "200KB"
+#define MAX_FILE_SIZE   (1000*1024) // 1 MB (200 KB)
+#define MAX_FILE_SIZE_STR "1000KB"
 
 /* Scratch buffer size */
 #define SCRATCH_BUFSIZE  8192

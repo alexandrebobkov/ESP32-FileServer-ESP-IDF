@@ -1750,3 +1750,5 @@
 241481	242020	7130461395861860	C:/Users/activcount/github/ESP32-FileServer-ESP-IDF/file_serving/build/.bin_timestamp	266446212810b36c
 242022	242201	0	esp-idf/esptool_py/CMakeFiles/app_check_size	f31afd20fae750f5
 242022	242201	0	C:/Users/activcount/github/ESP32-FileServer-ESP-IDF/file_serving/build/esp-idf/esptool_py/CMakeFiles/app_check_size	f31afd20fae750f5
+0	-1664541574	0	CMakeFiles/confserver	c697e5f3607688ce
+0	-1664541574	0	C:/Users/activcount/github/ESP32-FileServer-ESP-IDF/file_serving/build/CMakeFiles/confserver	c697e5f3607688ce

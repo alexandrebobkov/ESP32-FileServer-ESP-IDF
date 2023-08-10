@@ -145,7 +145,7 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
     ".button.button-primary:hover,button.button-primary:hover,input[type=\"submit\"].button-primary:hover,input[type=\"reset\"].button-primary:hover,input[type=\"button\"].button-primary:hover,.button.button-primary:focus,button.button-primary:focus,input[type=\"submit\"].button-primary:focus,input[type=\"reset\"].button-primary:focus,input[type=\"button\"].button-primary:focus {color: #FFF;background-color: #1EAEDB;border-color: #1EAEDB; }"
     "</style>"
     "<link href=\"//fonts.googleapis.com/css?family=Raleway:400,300,600\" rel=\"stylesheet\" type=\"text/css\">"
-    "</head><html><body>");
+    "</head><html><body><div class=\"container\">");
 
     /* Get handle to embedded file upload script */
     extern const unsigned char upload_script_start[] asm("_binary_upload_script_html_start");
@@ -161,9 +161,9 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
         "<col width=\"800px\" /><col width=\"300px\" /><col width=\"300px\" /><col width=\"100px\" />"
         "<thead><tr><th>Name</th><th>Type</th><th>Size (Bytes)</th><th>Delete</th></tr></thead>"
         "<tbody>");*/
-    httpd_resp_sendstr_chunk(req,
-        "<div class=\"row\">"
-        "<div class=\"six columns\">Name</div>"
+    httpd_resp_sendstr_chunk(req,        
+        "<div class=\"row\" style=\"margin-top: 2rem\">"
+        "<div class=\"six columns\" style=\"text-align: center;\"><b>Name</b></div>"
         "<div class=\"two columns\">Type</div>"
         "<div class=\"two columns\">Size (Bytes)</div>"
         "<div class=\"two columns\">Delete</div>"
@@ -193,10 +193,13 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
         }
         httpd_resp_sendstr_chunk(req, "\">");
         httpd_resp_sendstr_chunk(req, entry->d_name);
+        // Display file type
         httpd_resp_sendstr_chunk(req, "</a></div><div class=\"two columns\">");
         httpd_resp_sendstr_chunk(req, entrytype);
+        // Display file size
         httpd_resp_sendstr_chunk(req, "</div><div class=\"two columns\">");
         httpd_resp_sendstr_chunk(req, entrysize);
+        // Display file delete button
         httpd_resp_sendstr_chunk(req, "</div><div class=\"two columns\">");
         httpd_resp_sendstr_chunk(req, "<form method=\"post\" action=\"/delete");
         httpd_resp_sendstr_chunk(req, req->uri);

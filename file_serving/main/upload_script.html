@@ -27,7 +27,7 @@
 <!-- SKELETON WEB PAGE -->
 <!--div class="container"-->
     <div class="row">
-        <div class="twelve columns" style="margin-top:1rem;  background: rgb(230, 230, 231) !important;">
+        <div class="twelve columns" style="margin-top:1rem;  background: rgb(230, 230, 231)  !important;">
             <h1 style="text-align: center;">ESP32 Private Portable File Server</h1>
         </div>
     </div>
@@ -42,12 +42,12 @@
     <div class="row">
         <div class="one-half column">
             <label for="newfile">Which file to upload?</label>
-            <input id="newfile" type="file" onchange="setpath()" style="width:100%;">
+            <input id="newfile" type="file" class="button" onchange="setpath()" style="width:100%;">
         </div>
         <div class="one-half column">
             <label for="filepath">Set path on server</label>
             <input id="filepath" type="text" style="width:100%;">
-            <button id="upload" type="button" onclick="upload()">Upload</button>
+            <button id="upload" type="button" class="button-primary" onclick="upload()">Upload</button>
         </div>
     </div>
 <!--/div-->

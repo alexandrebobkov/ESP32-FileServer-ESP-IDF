@@ -1,4 +1,4 @@
-<table class="fixed" border="0">
+<!--table class="fixed" border="0">
     <col width="1000px" /><col width="500px" />
     <td>
         <table border="0">
@@ -23,30 +23,30 @@
             </tr>
         </table>
     </td></tr>
-</table>
+</table-->
 <!-- SKELETON WEB PAGE -->
 <div class="container">
     <div class="row">
-        <div class="twelve columns">
+        <div class="twelve columns" style="margin-top:0.25rem">
             <h4>ESP32 Private Portable File Server</h4>
         </div>
     </div>
     <div class="row">
-        <div class="one-half column" style="margin-top: 25%">
-            <h4>ESP32 Private Portable File Server</h4>
-            <p>Select file and click "Upload". Visit GitHub for more reference at <a href="https://github.com/alexandrebobkov/ESP32-FileServer-ESP-IDF">ESP32 File Server</a>.</p>
+        <div class="one-half column" style="margin-top: 1rem">
+            <p>Select file and click "Upload".</p>
         </div>
-        <div class="one-half column" style="margin-top: 25%">
-            <p>Select file and click "Upload". Visit GitHub for more reference at <a href="https://github.com/alexandrebobkov/ESP32-FileServer-ESP-IDF">ESP32 File Server</a>.</p>
+        <div class="one-half column" style="margin-top: 1rem">
+            <p>Visit GitHub for more reference at <a href="https://github.com/alexandrebobkov/ESP32-FileServer-ESP-IDF">ESP32 File Server</a>.</p>
         </div>
     </div>
     <div class="row">
         <div class="one-half column">
-            <h5>Which file to upload?</h5>
+            <label for="newfile">Which file to upload?</label>
             <input id="newfile" type="file" onchange="setpath()" style="width:100%;">
         </div>
         <div class="one-half column">
-            <h5>Specify path on server</h5>
+            <label for="filepath">Set path on server</label>
+            <input id="filepath" type="text" style="width:100%;">
             <button id="upload" type="button" onclick="upload()">Upload</button>
         </div>
     </div>

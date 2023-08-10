@@ -156,11 +156,19 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
     httpd_resp_send_chunk(req, (const char *)upload_script_start, upload_script_size);
 
     /* Send file-list table definition and column labels */
-    httpd_resp_sendstr_chunk(req,
+    /*httpd_resp_sendstr_chunk(req,
         "<table class=\"fixed\" border=\"1\">"
         "<col width=\"800px\" /><col width=\"300px\" /><col width=\"300px\" /><col width=\"100px\" />"
         "<thead><tr><th>Name</th><th>Type</th><th>Size (Bytes)</th><th>Delete</th></tr></thead>"
-        "<tbody>");
+        "<tbody>");*/
+    httpd_resp_sendstr_chunk(req,
+        "<div class=\"row\">"
+        "<div class=\"six columns\">Name</div>"
+        "<div class=\"two columns\">Type</div>"
+        "<div class=\"two columns\">Size (Bytes)</div>"
+        "<div class=\"two columns\">Delete</div>"
+        "</div>"
+    );
 
     /* Iterate over all files / folders and fetch their names and sizes */
     while ((entry = readdir(dir)) != NULL) {
@@ -175,7 +183,9 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
         ESP_LOGI(TAG, "Found %s : %s (%s bytes)", entrytype, entry->d_name, entrysize);
 
         /* Send chunk of HTML file containing table entries with file name and size */
-        httpd_resp_sendstr_chunk(req, "<tr><td><a href=\"");
+        //httpd_resp_sendstr_chunk(req, "<tr><td><a href=\"");
+        // Display file name
+        httpd_resp_sendstr_chunk(req, "<div class=\"row\"><div class=\"six columns\"><a href=\"");
         httpd_resp_sendstr_chunk(req, req->uri);
         httpd_resp_sendstr_chunk(req, entry->d_name);
         if (entry->d_type == DT_DIR) {
@@ -183,16 +193,18 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
         }
         httpd_resp_sendstr_chunk(req, "\">");
         httpd_resp_sendstr_chunk(req, entry->d_name);
-        httpd_resp_sendstr_chunk(req, "</a></td><td>");
+        httpd_resp_sendstr_chunk(req, "</a></div><div class=\"two columns\">");
         httpd_resp_sendstr_chunk(req, entrytype);
-        httpd_resp_sendstr_chunk(req, "</td><td>");
+        httpd_resp_sendstr_chunk(req, "</div><div class=\"two columns\">");
         httpd_resp_sendstr_chunk(req, entrysize);
-        httpd_resp_sendstr_chunk(req, "</td><td>");
+        httpd_resp_sendstr_chunk(req, "</div><div class=\"two columns\">");
         httpd_resp_sendstr_chunk(req, "<form method=\"post\" action=\"/delete");
         httpd_resp_sendstr_chunk(req, req->uri);
         httpd_resp_sendstr_chunk(req, entry->d_name);
         httpd_resp_sendstr_chunk(req, "\"><button type=\"submit\">Delete</button></form>");
-        httpd_resp_sendstr_chunk(req, "</td></tr>\n");
+        //httpd_resp_sendstr_chunk(req, "</td></tr>\n");
+        // Close row div
+        httpd_resp_sendstr_chunk(req, "</div></div>\n");
     }
     closedir(dir);
 

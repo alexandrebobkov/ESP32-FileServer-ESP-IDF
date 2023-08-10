@@ -143,6 +143,13 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
     ".button:hover,button:hover,input[type=\"submit\"]:hover,input[type=\"reset\"]:hover,input[type=\"button\"]:hover,.button:focus,button:focus,input[type=\"submit\"]:focus,input[type=\"reset\"]:focus,input[type=\"button\"]:focus {color: #333;border-color: #888;outline: 0; }"
     ".button.button-primary,button.button-primary,input[type=\"submit\"].button-primary,input[type=\"reset\"].button-primary,input[type=\"button\"].button-primary {color: #FFF;background-color: #33C3F0;border-color: #33C3F0; }"
     ".button.button-primary:hover,button.button-primary:hover,input[type=\"submit\"].button-primary:hover,input[type=\"reset\"].button-primary:hover,input[type=\"button\"].button-primary:hover,.button.button-primary:focus,button.button-primary:focus,input[type=\"submit\"].button-primary:focus,input[type=\"reset\"].button-primary:focus,input[type=\"button\"].button-primary:focus {color: #FFF;background-color: #1EAEDB;border-color: #1EAEDB; }"
+    "input[type=\"email\"],input[type=\"number\"],input[type=\"search\"],input[type=\"text\"],input[type=\"tel\"],input[type=\"url\"],input[type=\"password\"],textarea,select {height: 38px;padding: 6px 10px;background-color: #fff;border: 1px solid #D1D1D1;border-radius: 4px;box-shadow: none;box-sizing: border-box;}input[type=\"email\"],input[type=\"number\"],input[type=\"search\"],input[type=\"text\"],input[type=\"tel\"],input[type=\"url\"],input[type=\"password\"],textarea {-webkit-appearance: none;-moz-appearance: none;appearance: none;}textarea {min-height: 65px;padding-top: 6px;padding-bottom: 6px; }input[type=\"email\"]:focus,input[type=\"number\"]:focus,input[type=\"search\"]:focus,input[type=\"text\"]:focus,input[type=\"tel\"]:focus,input[type=\"url\"]:focus,input[type=\"password\"]:focus,textarea:focus,select:focus {border: 1px solid #33C3F0;outline: 0; }label,legend {display: block;margin-bottom: .5rem;font-weight: 600; }fieldset {padding: 0;border-width: 0; }input[type=\"checkbox\"],input[type=\"radio\"] {display: inline; }label > .label-body {display: inline-block;margin-left: .5rem;font-weight: normal; }"
+    "ul {list-style: circle inside; }ol {list-style: decimal inside; }ol, ul {padding-left: 0;margin-top: 0; }ul ul,ul ol,ol ol,ol ul {margin: 1.5rem 0 1.5rem 3rem;font-size: 90%; }li {margin-bottom: 1rem; }"
+    "code {padding: .2rem .5rem;margin: 0 .2rem;font-size: 90%;white-space: nowrap;background: #F1F1F1;border: 1px solid #E1E1E1;border-radius: 4px; }pre > code {display: block;padding: 1rem 1.5rem;white-space: pre; }"
+    "th,td {padding: 12px 15px;text-align: left;border-bottom: 1px solid #E1E1E1; }th:first-child,td:first-child {padding-left: 0; }th:last-child,td:last-child {padding-right: 0; }"
+    "button,.button {margin-bottom: 1rem; }input,textarea,select,fieldset {margin-bottom: 1.5rem; }pre,blockquote,dl,figure,table,p,ul,ol,form {margin-bottom: 2.5rem; }"
+    "hr {margin-top: 3rem;margin-bottom: 3.5rem;border-width: 0;border-top: 1px solid #E1E1E1; }"
+    ".container:after,.row:after,.u-cf {content: "";display: table;clear: both; }"
     "</style>"
     "<link href=\"//fonts.googleapis.com/css?family=Raleway:400,300,600\" rel=\"stylesheet\" type=\"text/css\">"
     "</head><html><body><div class=\"container\">");
@@ -207,7 +214,7 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
         httpd_resp_sendstr_chunk(req, "<form method=\"post\" action=\"/delete");
         httpd_resp_sendstr_chunk(req, req->uri);
         httpd_resp_sendstr_chunk(req, entry->d_name);
-        httpd_resp_sendstr_chunk(req, "\"><button type=\"submit\">Delete</button></form>");
+        httpd_resp_sendstr_chunk(req, "\"><button type=\"submit\" class=\"button\">Delete</button></form>");
         //httpd_resp_sendstr_chunk(req, "</td></tr>\n");
         // Close row div
         httpd_resp_sendstr_chunk(req, "</div></div>\n");

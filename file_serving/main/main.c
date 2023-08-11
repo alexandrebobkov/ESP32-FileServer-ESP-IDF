@@ -18,7 +18,12 @@
 #include "esp_err.h"
 #include "nvs_flash.h"
 #include "protocol_examples_common.h"
+#include "driver/gpio.h"
 #include "file_serving_example_common.h"
+
+#define BLINK_GPIO                  2    // Built-in LED
+#define CONFIG_BLINK_PERIOD_SHORT   250
+#define CONFIG_BLINK_PERIOD_LONG    3000
 
 /* This example demonstrates how to create file server
  * using esp_http_server. This file has only startup code.
@@ -26,9 +31,39 @@
  */
 
 static const char *TAG = "example";
+static uint8_t s_led_state = 0;
+
+static void configure_led (void) {
+    gpio_reset_pin(BLINK_GPIO);
+    gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
+}
+
+void blink_task (void *pvParameter)
+{
+    while (1) {
+        // Short ON
+        s_led_state = !s_led_state;
+        gpio_set_level(BLINK_GPIO, s_led_state);
+        vTaskDelay(CONFIG_BLINK_PERIOD_SHORT / portTICK_PERIOD_MS);
+        // Short OFF
+        s_led_state = !s_led_state;        
+        gpio_set_level(BLINK_GPIO, s_led_state);
+        vTaskDelay(CONFIG_BLINK_PERIOD_SHORT / portTICK_PERIOD_MS);
+        // Short ON
+        s_led_state = !s_led_state;
+        gpio_set_level(BLINK_GPIO, s_led_state);
+        vTaskDelay(CONFIG_BLINK_PERIOD_SHORT / portTICK_PERIOD_MS);
+        // Long OFF
+        s_led_state = !s_led_state;        
+        gpio_set_level(BLINK_GPIO, s_led_state);
+        vTaskDelay(CONFIG_BLINK_PERIOD_LONG / portTICK_PERIOD_MS);
+    }
+}
 
 void app_main(void)
 {
+    configure_led();
+    xTaskCreatePinnedToCore(&blink_task, "blink LED task", 2048, NULL, 5, NULL, 0);
     ESP_LOGI(TAG, "Starting example");
     ESP_ERROR_CHECK(nvs_flash_init());
     ESP_ERROR_CHECK(esp_netif_init());

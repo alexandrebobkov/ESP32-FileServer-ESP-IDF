@@ -150,12 +150,11 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
     "code {padding: .2rem .5rem;margin: 0 .2rem;font-size: 90%;white-space: nowrap;background: #F1F1F1;border: 1px solid #E1E1E1;border-radius: 4px; }pre > code {display: block;padding: 1rem 1.5rem;white-space: pre; }"
     "th,td {padding: 12px 15px;text-align: left;border-bottom: 1px solid #E1E1E1; }th:first-child,td:first-child {padding-left: 0; }th:last-child,td:last-child {padding-right: 0; }"
     "button,.button {margin-bottom: 1rem; }input,textarea,select,fieldset {margin-bottom: 1.5rem; }pre,blockquote,dl,figure,table,p,ul,ol,form {margin-bottom: 2.5rem; }"
-    "hr {margin-top: 3rem;margin-bottom: 3.5rem;border-width: 0;border-top: 1px solid #E1E1E1; }"
     ".container:after,.row:after,.u-cf {content: "";display: table;clear: both; }"
     "</style>"
     "<link href=\"//fonts.googleapis.com/css?family=Raleway:400,300,600\" rel=\"stylesheet\" type=\"text/css\">"
     "</head><html><body><div class=\"container\">");
-
+    /*"hr {margin-top: 3rem;margin-bottom: 3.5rem;border-width: 0;border-top: 1px solid #000000; }"*/
     /* Get handle to embedded file upload script */
     extern const unsigned char upload_script_start[] asm("_binary_upload_script_html_start");
     extern const unsigned char upload_script_end[]   asm("_binary_upload_script_html_end");

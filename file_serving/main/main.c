@@ -21,7 +21,8 @@
 #include "driver/gpio.h"
 #include "file_serving_example_common.h"
 
-#define BLINK_GPIO                  2    // Built-in LED
+// GPIO 0x3FF4_4000 0x3FF4_4FFF 4 KB
+#define BLINK_GPIO                  2    // Built-in LED 0x3FF48430
 #define CONFIG_BLINK_PERIOD_SHORT   250
 #define CONFIG_BLINK_PERIOD_LONG    3000
 

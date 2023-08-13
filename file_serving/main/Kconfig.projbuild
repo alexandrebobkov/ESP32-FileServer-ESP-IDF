@@ -27,30 +27,18 @@ menu "HTTP file_serving example menu"
         config EXAMPLE_PIN_MOSI
             int "MOSI GPIO number"
             default 15 if IDF_TARGET_ESP32
-            default 35 if IDF_TARGET_ESP32S2
-            default 35 if IDF_TARGET_ESP32S3
-            default 4  # C3 and others
 
         config EXAMPLE_PIN_MISO
             int "MISO GPIO number"
             default 2 if IDF_TARGET_ESP32
-            default 37 if IDF_TARGET_ESP32S2
-            default 37 if IDF_TARGET_ESP32S3
-            default 6  # C3 and others
 
         config EXAMPLE_PIN_CLK
             int "CLK GPIO number"
             default 14 if IDF_TARGET_ESP32
-            default 36 if IDF_TARGET_ESP32S2
-            default 36 if IDF_TARGET_ESP32S3
-            default 5  # C3 and others
 
         config EXAMPLE_PIN_CS
             int "CS GPIO number"
             default 13 if IDF_TARGET_ESP32
-            default 34 if IDF_TARGET_ESP32S2
-            default 34 if IDF_TARGET_ESP32S3
-            default 1  # C3 and others
 
     endmenu
 
@@ -60,32 +48,26 @@ menu "HTTP file_serving example menu"
         config EXAMPLE_PIN_CMD
             int "CMD GPIO number"
             default 35 if IDF_TARGET_ESP32S3
-            default 1
 
         config EXAMPLE_PIN_CLK
             int "CLK GPIO number"
             default 36 if IDF_TARGET_ESP32S3
-            default 2
 
         config EXAMPLE_PIN_D0
             int "D0 GPIO number"
             default 37 if IDF_TARGET_ESP32S3
-            default 3
 
         config EXAMPLE_PIN_D1
             int "D1 GPIO number"
             default 38 if IDF_TARGET_ESP32S3
-            default 4
 
         config EXAMPLE_PIN_D2
             int "D2 GPIO number"
             default 33 if IDF_TARGET_ESP32S3
-            default 5
 
         config EXAMPLE_PIN_D3
             int "D3 GPIO number"
             default 34 if IDF_TARGET_ESP32S3
-            default 6
 
     endmenu
 

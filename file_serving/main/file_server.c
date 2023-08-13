@@ -57,6 +57,15 @@ static esp_err_t index_html_get_handler(httpd_req_t *req)
     return ESP_OK;
 }
 
+static esp_err_t img_get_handler(httpd_req_t *req)
+{
+    httpd_resp_set_status(req, "307 Temporary Redirect");
+    httpd_resp_set_hdr(req, "Location", "/");
+    httpd_resp_set_type(req, "image/png");
+    httpd_resp_send(req, NULL, 0);  // Response body can be empty
+    return ESP_OK;
+}
+
 /* Handler to respond with an icon file embedded in flash.
  * Browsers expect to GET website icon at URI /favicon.ico.
  * This can be overridden by uploading file with same name */
@@ -310,8 +319,9 @@ static esp_err_t download_get_handler(httpd_req_t *req)
         if (strcmp(filename, "/index.html") == 0) {
             return index_html_get_handler(req);
         } else if (strcmp(filename, "/favicon.ico") == 0) {
-        //} else if (strcmp(filename, "/favicon.ico") == 0) {
             return favicon_get_handler(req);
+        } else if (strcmp(filename, "/bot.png") == 0) {
+            return img_get_handler(req);
         }
         ESP_LOGE(TAG, "Failed to stat file : %s", filepath);
         /* Respond with 404 Not Found */

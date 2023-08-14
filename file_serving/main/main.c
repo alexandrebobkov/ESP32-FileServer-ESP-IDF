@@ -22,9 +22,14 @@
 #include "file_serving_example_common.h"
 
 // GPIO 0x3FF4_4000 0x3FF4_4FFF 4 KB
-#define BLINK_GPIO                  2    // Built-in LED 0x3FF48430
+#define BLINK_GPIO                  27    // Built-in LED 0x3FF48430
 #define CONFIG_BLINK_PERIOD_SHORT   250
 #define CONFIG_BLINK_PERIOD_LONG    3000
+
+#define PIN_NUM_MISO    2 
+#define PIN_NUM_MOSI    15
+#define PIN_NUM_CLK     14
+#define PIN_NUM_CS      13
 
 /* This example demonstrates how to create file server
  * using esp_http_server. This file has only startup code.

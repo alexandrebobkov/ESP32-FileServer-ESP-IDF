@@ -21,15 +21,32 @@
 #include "driver/gpio.h"
 #include "file_serving_example_common.h"
 
+#define SD_CARD
+//#define SPIFFS
+
+#ifdef CONFIG_EXAMPLE_MOUNT_SD_CARD
+// SD_CARD
 // GPIO 0x3FF4_4000 0x3FF4_4FFF 4 KB
-#define BLINK_GPIO                  27    // Built-in LED 0x3FF48430
+#define BLINK_GPIO                  27    
 #define CONFIG_BLINK_PERIOD_SHORT   250
 #define CONFIG_BLINK_PERIOD_LONG    3000
+#define PIN_NUM_MISO                2       // Built-in LED 0x3FF48430
+#define PIN_NUM_MOSI                15
+#define PIN_NUM_CLK                 14
+#define PIN_NUM_CS                  13
+#endif
 
-#define PIN_NUM_MISO    2 
-#define PIN_NUM_MOSI    15
-#define PIN_NUM_CLK     14
-#define PIN_NUM_CS      13
+#ifdef SPIFFS
+#define BLINK_GPIO                  2       // Built-in LED 0x3FF48430
+#define CONFIG_BLINK_PERIOD_SHORT   250
+#define CONFIG_BLINK_PERIOD_LONG    3000
+#define PIN_NUM_MISO                2 
+#define PIN_NUM_MOSI                15
+#define PIN_NUM_CLK                 14
+#define PIN_NUM_CS                  13
+#endif
+
+
 
 /* This example demonstrates how to create file server
  * using esp_http_server. This file has only startup code.

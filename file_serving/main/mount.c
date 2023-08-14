@@ -101,6 +101,11 @@ esp_err_t example_mount_storage(const char* base_path)
     sdspi_device_config_t slot_config = SDSPI_DEVICE_CONFIG_DEFAULT();
     slot_config.gpio_cs = CONFIG_EXAMPLE_PIN_CS;
     slot_config.host_id = host.slot;
+    ESP_LOGI(TAG, "SD Card information: ");
+//  ESP_LOGI(TAG, "Partition size: total: %d, used: %d", total, used);
+//  size_t total = 0, used = 0;
+//  ret = esp_spiffs_info(NULL, &total, &used);
+    //sdmmc_card_print_info(stdout, card);
     ret = esp_vfs_fat_sdspi_mount(base_path, &host, &slot_config, &mount_config, &card);
 
 #endif // !CONFIG_EXAMPLE_USE_SDMMC_HOST

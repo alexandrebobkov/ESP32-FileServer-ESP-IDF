@@ -26,6 +26,8 @@
 #include "esp_spiffs.h"
 #include "esp_http_server.h"
 
+#include "esp_vfs_fat.h"
+
 /* Max length a file path can have on storage */
 #define FILE_PATH_MAX (ESP_VFS_PATH_MAX + CONFIG_SPIFFS_OBJ_NAME_LEN)
 
@@ -45,7 +47,7 @@ struct file_server_data {
     char scratch[SCRATCH_BUFSIZE];
 };
 
-static const char *TAG = "file_server";
+static const char *TAG = "ESP32 File Server: ";
 
 /* Handler to redirect incoming GET request for /index.html to /
  * This can be overridden by uploading file with same name */
@@ -87,6 +89,10 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
 {
     char entrypath[FILE_PATH_MAX];
     char entrysize[16];
+    char card_total [16];
+    char card_free [16];
+    char card_used [16];
+    uint64_t total_bytes, free_bytes;
     const char *entrytype;
 
     struct dirent *entry;
@@ -104,6 +110,11 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
         httpd_resp_send_err(req, HTTPD_404_NOT_FOUND, "Directory does not exist");
         return ESP_FAIL;
     }
+    esp_vfs_fat_info("/data", &total_bytes, &free_bytes);
+    sprintf(card_total, "%lld", total_bytes/1024/1024);
+    sprintf(card_free, "%lld", free_bytes/1024/1024);
+    sprintf(card_used, "%lld", (free_bytes / total_bytes)*100);
+    ESP_LOGI(TAG, "SD Card Total: %sMB Free %sMB", card_total, card_free);
 
     /* Send HTML file header */
     httpd_resp_sendstr_chunk(req, "<!DOCTYPE html><head><meta charset=\"utf-8\"><title>ESP32 Private Portable Files Server</title>"
@@ -184,11 +195,22 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
         "<div class=\"row\">"
         "<div class=\"six columns\" style=\"text-align: center;\"><b>Name</b></div>"
         "<div class=\"two columns\" style=\"text-align: center;\"><b>Type</b></div>"
-        "<div class=\"two columns\" style=\"text-align: center;\"><b>Size (Bytes)</b></div>"
+        "<div class=\"two columns\" style=\"text-align: center;\"><b>Size (KB)</b></div>"
         "<div class=\"two columns\" style=\"text-align: center;\"><b>Delete</b></div>"
         "</div>"
         "<hr>"
     );
+
+    /*size_t capacity = 0, used = 0;
+    
+    esp_err_t ret = esp_spiffs_info(NULL, &capacity, &used);
+    //esp_err_t ret = esp_vfs_fat_info("/data", &total_bytes, &free_bytes);
+
+    if (ret) {
+        sprintf(card_capacity, "%d", capacity);
+        sprintf(card_used, "%d", used);
+        ESP_LOGI(TAG, "Total Capacity %s, used %s", card_capacity, card_used);
+    }*/
 
     /* Iterate over all files / folders and fetch their names and sizes */
     while ((entry = readdir(dir)) != NULL) {
@@ -199,8 +221,9 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
             ESP_LOGE(TAG, "Failed to stat %s : %s", entrytype, entry->d_name);
             continue;
         }
-        sprintf(entrysize, "%ld", entry_stat.st_size);
-        ESP_LOGI(TAG, "Found %s : %s (%s bytes)", entrytype, entry->d_name, entrysize);
+        sprintf(entrysize, "%ld", entry_stat.st_size/1024);
+        //ESP_LOGI(TAG, "Found %s : %s (%s bytes)", entrytype, entry->d_name, entrysize);
+        ESP_LOGI(TAG, "Found %s : %s (%s KB)", entrytype, entry->d_name, entrysize);
 
         // Send chunk of HTML file containing table entries with file name and size 
         //httpd_resp_sendstr_chunk(req, "<tr><td><a href=\"");
@@ -229,8 +252,15 @@ static esp_err_t http_resp_dir_html(httpd_req_t *req, const char *dirpath)
         // Close row div
         httpd_resp_sendstr_chunk(req, "</div></div>\n");
     }
+    
     closedir(dir);
     httpd_resp_sendstr_chunk(req, "<hr>\n");
+    httpd_resp_sendstr_chunk(req, "<p> Total Storage: ");
+    httpd_resp_sendstr_chunk(req, card_total);
+    httpd_resp_sendstr_chunk(req, "MB. Free Space: ");
+    httpd_resp_sendstr_chunk(req, card_free);
+    httpd_resp_sendstr_chunk(req, "MB.</p>");
+
 
     /* Finish the file list table */
     //httpd_resp_sendstr_chunk(req, "</tbody></table>");

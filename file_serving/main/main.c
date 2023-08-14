@@ -17,9 +17,11 @@
 #include "esp_netif.h"
 #include "esp_err.h"
 #include "nvs_flash.h"
+#include "esp_vfs_fat.h"
 #include "protocol_examples_common.h"
 #include "driver/gpio.h"
 #include "file_serving_example_common.h"
+#include <string.h>
 
 #define SD_CARD
 //#define SPIFFS
@@ -53,8 +55,9 @@
  * Look in file_server.c for the implementation.
  */
 
-static const char *TAG = "example";
+static const char *TAG = "ESP32-SERVER";
 static uint8_t s_led_state = 0;
+uint64_t total_bytes, free_bytes;
 
 static void configure_led (void) {
     gpio_reset_pin(BLINK_GPIO);
@@ -95,6 +98,13 @@ void app_main(void)
     /* Initialize file storage */
     const char* base_path = "/data";
     ESP_ERROR_CHECK(example_mount_storage(base_path));
+    esp_vfs_fat_info(base_path, &total_bytes, &free_bytes);
+    char card_total [16];
+    char card_free [16];
+    sprintf(card_total, "%lld", total_bytes/1024/1024);
+    sprintf(card_free, "%lld", free_bytes/1024/1024);
+    ESP_LOGI(TAG, "MAIN. SD Card Total: %sMB Free %sMB", card_total, card_free);
+    
 
     /* This helper function configures Wi-Fi or Ethernet, as selected in menuconfig.
      * Read "Establishing Wi-Fi or Ethernet Connection" section in

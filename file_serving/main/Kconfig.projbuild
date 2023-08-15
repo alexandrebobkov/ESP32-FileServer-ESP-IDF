@@ -26,19 +26,19 @@ menu "HTTP file_serving example menu"
 
         config EXAMPLE_PIN_MOSI
             int "MOSI GPIO number"
-            default 15 if IDF_TARGET_ESP32
+            default 22 if IDF_TARGET_ESP32
 
         config EXAMPLE_PIN_MISO
             int "MISO GPIO number"
-            default 2 if IDF_TARGET_ESP32
+            default 5 if IDF_TARGET_ESP32
 
         config EXAMPLE_PIN_CLK
             int "CLK GPIO number"
-            default 14 if IDF_TARGET_ESP32
+            default 19 if IDF_TARGET_ESP32
 
         config EXAMPLE_PIN_CS
             int "CS GPIO number"
-            default 13 if IDF_TARGET_ESP32
+            default 23 if IDF_TARGET_ESP32
 
     endmenu
 

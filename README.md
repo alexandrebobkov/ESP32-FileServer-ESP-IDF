@@ -10,3 +10,5 @@ D13 -> CS
 
 D14 -> CLK
 
+![ESP32 File Server with SD card](ESP32-Server-SD.jpg)
+

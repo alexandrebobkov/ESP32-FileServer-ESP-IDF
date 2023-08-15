@@ -1,1 +1,6 @@
 # ESP32-FileServer-ESP-IDF
+
+D15 -> MOSI
+D2 -> MISO
+D13 -> CS
+D14 -> CLK

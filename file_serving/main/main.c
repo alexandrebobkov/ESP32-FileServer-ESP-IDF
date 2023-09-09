@@ -23,7 +23,7 @@
 #include "file_serving_example_common.h"
 #include <string.h>
 
-#define SD_CARD
+//#define SD_CARD
 #define SPIFFS
 //#define CONFIG_EXAMPLE_MOUNT_SD_CARD
 
@@ -43,10 +43,10 @@
 #define BLINK_GPIO                  2       // Built-in LED 0x3FF48430
 #define CONFIG_BLINK_PERIOD_SHORT   250
 #define CONFIG_BLINK_PERIOD_LONG    3000
-#define PIN_NUM_MISO                4 
-#define PIN_NUM_MOSI                15
-#define PIN_NUM_CLK                 14
-#define PIN_NUM_CS                  13
+#define PIN_NUM_MISO                4       // orange
+#define PIN_NUM_MOSI                15      // green
+#define PIN_NUM_CLK                 14      // yellow
+#define PIN_NUM_CS                  13      // blue
 #endif
 
 

@@ -24,10 +24,11 @@
 #include <string.h>
 
 #define SD_CARD
-//#define SPIFFS
+#define SPIFFS
+//#define CONFIG_EXAMPLE_MOUNT_SD_CARD
 
-//#ifdef CONFIG_EXAMPLE_MOUNT_SD_CARD
-#ifdef SD_CARD
+#ifdef CONFIG_EXAMPLE_MOUNT_SD_CARD
+//#ifdef SD_CARD
 // GPIO 0x3FF4_4000 0x3FF4_4FFF 4 KB
 #define BLINK_GPIO                  2       // Built-in LED 0x3FF48430
 #define CONFIG_BLINK_PERIOD_SHORT   250

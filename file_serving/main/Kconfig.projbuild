@@ -34,11 +34,11 @@ menu "HTTP file_serving example menu"
 
         config EXAMPLE_PIN_CLK
             int "CLK GPIO number"
-            default 4 if IDF_TARGET_ESP32
+            default 14 if IDF_TARGET_ESP32
 
         config EXAMPLE_PIN_CS
             int "CS GPIO number"
-            default 23 if IDF_TARGET_ESP32
+            default 13 if IDF_TARGET_ESP32
 
     endmenu
 

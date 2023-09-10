@@ -4,7 +4,7 @@
 
 D15 -> MOSI
 
-D2 -> MISO
+D4 -> MISO
 
 D13 -> CS
 

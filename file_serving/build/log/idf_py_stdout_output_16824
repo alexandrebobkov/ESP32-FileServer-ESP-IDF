@@ -1,0 +1,79 @@
+-- Found Git: C:/Users/alex/.espressif/tools/tools/idf-git/2.39.2/cmd/git.exe (found version "2.39.2.windows.1") 
+-- ccache will be used for faster recompilation
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/Users/alex/.espressif/tools/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc.exe
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Users/alex/.espressif/tools/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Users/alex/.espressif/tools/tools/xtensa-esp32-elf/esp-12.2.0_20230208/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building ESP-IDF components for target esp32
+-- Project sdkconfig file C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig
+Loading defaults file C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig.defaults...
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:195 CONFIG_APP_BUILD_TYPE_ELF_RAM was replaced with CONFIG_APP_BUILD_TYPE_RAM
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:848 CONFIG_ESP32_WIFI_ENABLED was replaced with CONFIG_ESP_WIFI_ENABLED
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:849 CONFIG_ESP32_WIFI_STATIC_RX_BUFFER_NUM was replaced with CONFIG_ESP_WIFI_STATIC_RX_BUFFER_NUM
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:850 CONFIG_ESP32_WIFI_DYNAMIC_RX_BUFFER_NUM was replaced with CONFIG_ESP_WIFI_DYNAMIC_RX_BUFFER_NUM
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:851 CONFIG_ESP32_WIFI_STATIC_TX_BUFFER was replaced with CONFIG_ESP_WIFI_STATIC_TX_BUFFER
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:852 CONFIG_ESP32_WIFI_DYNAMIC_TX_BUFFER was replaced with CONFIG_ESP_WIFI_DYNAMIC_TX_BUFFER
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:853 CONFIG_ESP32_WIFI_TX_BUFFER_TYPE was replaced with CONFIG_ESP_WIFI_TX_BUFFER_TYPE
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:854 CONFIG_ESP32_WIFI_DYNAMIC_TX_BUFFER_NUM was replaced with CONFIG_ESP_WIFI_DYNAMIC_TX_BUFFER_NUM
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:855 CONFIG_ESP32_WIFI_CSI_ENABLED was replaced with CONFIG_ESP_WIFI_CSI_ENABLED
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:856 CONFIG_ESP32_WIFI_AMPDU_TX_ENABLED was replaced with CONFIG_ESP_WIFI_AMPDU_TX_ENABLED
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:857 CONFIG_ESP32_WIFI_TX_BA_WIN was replaced with CONFIG_ESP_WIFI_TX_BA_WIN
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:858 CONFIG_ESP32_WIFI_AMPDU_RX_ENABLED was replaced with CONFIG_ESP_WIFI_AMPDU_RX_ENABLED
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:859 CONFIG_ESP32_WIFI_RX_BA_WIN was replaced with CONFIG_ESP_WIFI_RX_BA_WIN
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:860 CONFIG_ESP32_WIFI_NVS_ENABLED was replaced with CONFIG_ESP_WIFI_NVS_ENABLED
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:861 CONFIG_ESP32_WIFI_TASK_PINNED_TO_CORE_0 was replaced with CONFIG_ESP_WIFI_TASK_PINNED_TO_CORE_0
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:862 CONFIG_ESP32_WIFI_TASK_PINNED_TO_CORE_1 was replaced with CONFIG_ESP_WIFI_TASK_PINNED_TO_CORE_1
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:863 CONFIG_ESP32_WIFI_SOFTAP_BEACON_MAX_LEN was replaced with CONFIG_ESP_WIFI_SOFTAP_BEACON_MAX_LEN
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:864 CONFIG_ESP32_WIFI_MGMT_SBUF_NUM was replaced with CONFIG_ESP_WIFI_MGMT_SBUF_NUM
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:865 CONFIG_ESP32_WIFI_IRAM_OPT was replaced with CONFIG_ESP_WIFI_IRAM_OPT
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:866 CONFIG_ESP32_WIFI_RX_IRAM_OPT was replaced with CONFIG_ESP_WIFI_RX_IRAM_OPT
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:867 CONFIG_ESP32_WIFI_ENABLE_WPA3_SAE was replaced with CONFIG_ESP_WIFI_ENABLE_WPA3_SAE
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:868 CONFIG_ESP32_WIFI_ENABLE_WPA3_OWE_STA was replaced with CONFIG_ESP_WIFI_ENABLE_WPA3_OWE_STA
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:1526 CONFIG_WPA_MBEDTLS_CRYPTO was replaced with CONFIG_ESP_WIFI_MBEDTLS_CRYPTO
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:1527 CONFIG_WPA_MBEDTLS_TLS_CLIENT was replaced with CONFIG_ESP_WIFI_MBEDTLS_TLS_CLIENT
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:1528 CONFIG_WPA_WAPI_PSK was replaced with CONFIG_ESP_WIFI_WAPI_PSK
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:1529 CONFIG_WPA_SUITE_B_192 was replaced with CONFIG_ESP_WIFI_SUITE_B_192
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:1530 CONFIG_WPA_DEBUG_PRINT was replaced with CONFIG_ESP_WIFI_DEBUG_PRINT
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:1531 CONFIG_WPA_TESTING_OPTIONS was replaced with CONFIG_ESP_WIFI_TESTING_OPTIONS
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:1532 CONFIG_WPA_WPS_STRICT was replaced with CONFIG_ESP_WIFI_WPS_STRICT
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:1533 CONFIG_WPA_11KV_SUPPORT was replaced with CONFIG_ESP_WIFI_11KV_SUPPORT
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:1534 CONFIG_WPA_MBO_SUPPORT was replaced with CONFIG_ESP_WIFI_MBO_SUPPORT
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:1535 CONFIG_WPA_DPP_SUPPORT was replaced with CONFIG_ESP_WIFI_DPP_SUPPORT
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:1536 CONFIG_WPA_11R_SUPPORT was replaced with CONFIG_ESP_WIFI_11R_SUPPORT
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/sdkconfig:1537 CONFIG_WPA_WPS_SOFTAP_REGISTRAR was replaced with CONFIG_ESP_WIFI_WPS_SOFTAP_REGISTRAR
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of time_t
+-- Check size of time_t - done
+-- Found Python3: c:/Users/alex/.espressif/tools/python_env/idf5.1_py3.11_env/Scripts/python.exe (found version "3.11.2") found components: Interpreter 
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
+-- App "file_server" version: 77a6cde-dirty
+-- Adding linker script C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script C:/Users/alex/esp/esp-idf/components/esp_system/ld/esp32/sections.ld.in
+-- Adding linker script C:/Users/alex/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script C:/Users/alex/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script C:/Users/alex/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script C:/Users/alex/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script C:/Users/alex/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script C:/Users/alex/esp/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-funcs.ld
+-- Adding linker script C:/Users/alex/esp/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_coex esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash openthread partition_table perfmon protobuf-c protocol_examples_common protocomm pthread sdmmc soc spi_flash spiffs tcp_transport ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant xtensa
+-- Component paths: C:/Users/alex/esp/esp-idf/components/app_trace C:/Users/alex/esp/esp-idf/components/app_update C:/Users/alex/esp/esp-idf/components/bootloader C:/Users/alex/esp/esp-idf/components/bootloader_support C:/Users/alex/esp/esp-idf/components/bt C:/Users/alex/esp/esp-idf/components/cmock C:/Users/alex/esp/esp-idf/components/console C:/Users/alex/esp/esp-idf/components/cxx C:/Users/alex/esp/esp-idf/components/driver C:/Users/alex/esp/esp-idf/components/efuse C:/Users/alex/esp/esp-idf/components/esp-tls C:/Users/alex/esp/esp-idf/components/esp_adc C:/Users/alex/esp/esp-idf/components/esp_app_format C:/Users/alex/esp/esp-idf/components/esp_coex C:/Users/alex/esp/esp-idf/components/esp_common C:/Users/alex/esp/esp-idf/components/esp_eth C:/Users/alex/esp/esp-idf/components/esp_event C:/Users/alex/esp/esp-idf/components/esp_gdbstub C:/Users/alex/esp/esp-idf/components/esp_hid C:/Users/alex/esp/esp-idf/components/esp_http_client C:/Users/alex/esp/esp-idf/components/esp_http_server C:/Users/alex/esp/esp-idf/components/esp_https_ota C:/Users/alex/esp/esp-idf/components/esp_https_server C:/Users/alex/esp/esp-idf/components/esp_hw_support C:/Users/alex/esp/esp-idf/components/esp_lcd C:/Users/alex/esp/esp-idf/components/esp_local_ctrl C:/Users/alex/esp/esp-idf/components/esp_mm C:/Users/alex/esp/esp-idf/components/esp_netif C:/Users/alex/esp/esp-idf/components/esp_netif_stack C:/Users/alex/esp/esp-idf/components/esp_partition C:/Users/alex/esp/esp-idf/components/esp_phy C:/Users/alex/esp/esp-idf/components/esp_pm C:/Users/alex/esp/esp-idf/components/esp_psram C:/Users/alex/esp/esp-idf/components/esp_ringbuf C:/Users/alex/esp/esp-idf/components/esp_rom C:/Users/alex/esp/esp-idf/components/esp_system C:/Users/alex/esp/esp-idf/components/esp_timer C:/Users/alex/esp/esp-idf/components/esp_wifi C:/Users/alex/esp/esp-idf/components/espcoredump C:/Users/alex/esp/esp-idf/components/esptool_py C:/Users/alex/esp/esp-idf/components/fatfs C:/Users/alex/esp/esp-idf/components/freertos C:/Users/alex/esp/esp-idf/components/hal C:/Users/alex/esp/esp-idf/components/heap C:/Users/alex/esp/esp-idf/components/http_parser C:/Users/alex/esp/esp-idf/components/idf_test C:/Users/alex/esp/esp-idf/components/ieee802154 C:/Users/alex/esp/esp-idf/components/json C:/Users/alex/esp/esp-idf/components/log C:/Users/alex/esp/esp-idf/components/lwip C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/main C:/Users/alex/esp/esp-idf/components/mbedtls C:/Users/alex/esp/esp-idf/components/mqtt C:/Users/alex/esp/esp-idf/components/newlib C:/Users/alex/esp/esp-idf/components/nvs_flash C:/Users/alex/esp/esp-idf/components/openthread C:/Users/alex/esp/esp-idf/components/partition_table C:/Users/alex/esp/esp-idf/components/perfmon C:/Users/alex/esp/esp-idf/components/protobuf-c C:/Users/alex/esp/esp-idf/examples/common_components/protocol_examples_common C:/Users/alex/esp/esp-idf/components/protocomm C:/Users/alex/esp/esp-idf/components/pthread C:/Users/alex/esp/esp-idf/components/sdmmc C:/Users/alex/esp/esp-idf/components/soc C:/Users/alex/esp/esp-idf/components/spi_flash C:/Users/alex/esp/esp-idf/components/spiffs C:/Users/alex/esp/esp-idf/components/tcp_transport C:/Users/alex/esp/esp-idf/components/ulp C:/Users/alex/esp/esp-idf/components/unity C:/Users/alex/esp/esp-idf/components/usb C:/Users/alex/esp/esp-idf/components/vfs C:/Users/alex/esp/esp-idf/components/wear_levelling C:/Users/alex/esp/esp-idf/components/wifi_provisioning C:/Users/alex/esp/esp-idf/components/wpa_supplicant C:/Users/alex/esp/esp-idf/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/build

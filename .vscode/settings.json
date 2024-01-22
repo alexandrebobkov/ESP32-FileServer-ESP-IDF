@@ -1,4 +1,4 @@
 {
-    "cmake.sourceDirectory": "C:/Users/activcount/github/ESP32-FileServer-ESP-IDF/file_serving/main",
+    "cmake.sourceDirectory": "C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/main",
     "idf.portWin": "COM3"
 }

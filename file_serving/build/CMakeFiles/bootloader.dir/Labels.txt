@@ -1,13 +1,13 @@
 # Target labels
  bootloader
 # Source files and their labels
-C:/Users/activcount/github/ESP32-FileServer-ESP-IDF/file_serving/build/CMakeFiles/bootloader
-C:/Users/activcount/github/ESP32-FileServer-ESP-IDF/file_serving/build/CMakeFiles/bootloader.rule
-C:/Users/activcount/github/ESP32-FileServer-ESP-IDF/file_serving/build/CMakeFiles/bootloader-complete.rule
-C:/Users/activcount/github/ESP32-FileServer-ESP-IDF/file_serving/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
-C:/Users/activcount/github/ESP32-FileServer-ESP-IDF/file_serving/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
-C:/Users/activcount/github/ESP32-FileServer-ESP-IDF/file_serving/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
-C:/Users/activcount/github/ESP32-FileServer-ESP-IDF/file_serving/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
-C:/Users/activcount/github/ESP32-FileServer-ESP-IDF/file_serving/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
-C:/Users/activcount/github/ESP32-FileServer-ESP-IDF/file_serving/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
-C:/Users/activcount/github/ESP32-FileServer-ESP-IDF/file_serving/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/build/CMakeFiles/bootloader
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/build/CMakeFiles/bootloader.rule
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/build/CMakeFiles/bootloader-complete.rule
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/Users/alex/github/ESP32-FileServer-ESP-IDF/file_serving/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

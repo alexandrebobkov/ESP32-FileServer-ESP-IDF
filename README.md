@@ -6,6 +6,7 @@
 </p>
 
 <p>
+Key wiring:</br>
     <ul>
         <li>D15 -> MOSI</li>
         <li>D4 -> MISO</li>
@@ -13,14 +14,3 @@
         <li>D14 -> CLK</li>
     </ul>
 </p>
-
-D15 -> MOSI
-
-D4 -> MISO
-
-D13 -> CS
-
-D14 -> CLK
-
-
-

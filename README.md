@@ -78,4 +78,15 @@ Key wiring:</br>
     <html>
         <body>
             <div class=\"container\">
+                <hr>
+                    <div class=\"row\">"
+                        <div class=\"six columns\" style=\"text-align: center;\"><b>Name</b></div>
+                        <div class=\"two columns\" style=\"text-align: center;\"><b>Type</b></div>
+                        <div class=\"two columns\" style=\"text-align: center;\"><b>Size (KB)</b></div>
+                        <div class=\"two columns\" style=\"text-align: center;\"><b>Delete</b></div>
+                    </div>
+                <hr>
+            </div>
+        </body>
+    </html>
 ```

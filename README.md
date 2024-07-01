@@ -5,6 +5,8 @@
     <img src="ESP32-Server-SD.jpg" width="384"/>
 </p>
 
+## How Does it Work?
+
 <p>
 Key wiring:</br>
     <ul>

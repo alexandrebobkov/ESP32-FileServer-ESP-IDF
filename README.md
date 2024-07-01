@@ -16,7 +16,9 @@ Key wiring:</br>
 </p>
 
 <p>CSS file</p>
+
 ```css
+
 html {font-family: sans-serif;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;}
 body {margin: 0;}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {display: block;}

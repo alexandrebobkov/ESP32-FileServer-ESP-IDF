@@ -8,20 +8,17 @@
 ## Features
 
 ## Important files
-<ul>
-    <li>main.c</li>
-    <li>file_server.c</li>
-    <li>mount.c</li>
-</ul>
+> [!NOTE]
+> * main.c
+> * file_server.c
+> * mount.c
 
 ### Key wiring:
 > [!NOTE]
 > * D15 -> MOSI
 > * D4 -> MISO
->
-> D13 -> CS
->
-> D14 -> CLK
+> * D13 -> CS
+> * D14 -> CLK
 
 <ul>
     <li>D15 -> MOSI</li>

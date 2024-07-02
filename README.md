@@ -5,19 +5,23 @@
     <img src="ESP32-Server-SD.jpg" width="384"/>
 </p>
 
-## How Does it Work?
+## Important files
 
-<p>
-Key wiring:</br>
-    <ul>
-        <li>D15 -> MOSI</li>
-        <li>D4 -> MISO</li>
-        <li>D13 -> CS</li>
-        <li>D14 -> CLK</li>
-    </ul>
-</p>
+<ul>
+    <li>main.c</li>
+    <li>file_server.c</li>
+    <li>mount.c</li>
+</ul>
 
-<h2>Formatting</h2>
+### Key wiring:
+<ul>
+    <li>D15 -> MOSI</li>
+    <li>D4 -> MISO</li>
+    <li>D13 -> CS</li>
+    <li>D14 -> CLK</li>
+</ul>
+
+## Formatting
 <p>The landing page is formatted according to the CSS file below:</p>
 
 ```css
@@ -75,7 +79,7 @@ th,td {padding: 12px 15px;text-align: left;border-bottom: 1px solid #E1E1E1; }th
 button,.button {margin-bottom: 1rem; }input,textarea,select,fieldset {margin-bottom: 1.5rem; }pre,blockquote,dl,figure,table,p,ul,ol,form {margin-bottom: 2.5rem; }
 .container:after,.row:after,.u-cf {content: "";display: table;clear: both; }
 ```
-<h2>Landing Page</h2>
+## Landing Page
 <p>HTML for the Landing Page is divided into three sections. Top section loads upper section of the landing page, including table header. The middle section contains table rows, which are populated by C code for each file stored on a file server. Finally, the bottom section contains landing page footer and closing html tags.</p>
 
 ```html
@@ -102,7 +106,7 @@ button,.button {margin-bottom: 1rem; }input,textarea,select,fieldset {margin-bot
     </html>
 ```
 
-<h3>Files Table</h3>
+## Files Table
 
 <p>A while loop scans through the files saved on a file server.</p>
 

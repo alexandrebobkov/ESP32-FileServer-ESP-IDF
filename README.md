@@ -112,11 +112,16 @@ button,.button {margin-bottom: 1rem; }input,textarea,select,fieldset {margin-bot
     }
 ```
 
-<p>For each file saved on a file server, add table row and display file name and file size.</p>
-<p>Add table row</p>
+<p>For each file saved on a file server, add table row and display file name and file size. The following line of code at the beginning of the wile loop adds new row to the table.</p>
 
 ```C
 httpd_resp_sendstr_chunk(req, "<div class=\"row\"><div class=\"six columns\"><a href=\"");
+```
+
+<p>Similarly, the following line of code at the end of while loop closes row div tag:</p>
+
+```C++
+httpd_resp_sendstr_chunk(req, "</div></div>\n");
 ```
 
 ```C

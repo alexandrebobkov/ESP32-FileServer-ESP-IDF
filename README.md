@@ -5,6 +5,8 @@
     <img src="ESP32-Server-SD.jpg" width="384"/>
 </p>
 
+## Features
+
 ## Important files
 <ul>
     <li>main.c</li>
@@ -13,6 +15,12 @@
 </ul>
 
 ### Key wiring:
+> [!NOTE]
+> D15 -> MOSI
+> D4 -> MISO
+> D13 -> CS
+> D14 -> CLK
+
 <ul>
     <li>D15 -> MOSI</li>
     <li>D4 -> MISO</li>

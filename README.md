@@ -115,13 +115,33 @@ button,.button {margin-bottom: 1rem; }input,textarea,select,fieldset {margin-bot
 <p>For each file saved on a file server, add table row and display file name and file size. The following line of code at the beginning of the wile loop adds new row to the table.</p>
 
 ```C
-httpd_resp_sendstr_chunk(req, "<div class=\"row\"><div class=\"six columns\"><a href=\"");
+httpd_resp_sendstr_chunk(req, "<div class=\"row\">");
 ```
 
 <p>Similarly, the following line of code at the end of while loop closes row div tag:</p>
 
-```C++
+```C
 httpd_resp_sendstr_chunk(req, "</div></div>\n");
+```
+
+<p>The following lines of code display file name, file type, and the file name:</p>
+
+```C
+// Display file name
+httpd_resp_sendstr_chunk(req, "<div class=\"six columns\"><a href=\"");
+httpd_resp_sendstr_chunk(req, req->uri);
+httpd_resp_sendstr_chunk(req, entry->d_name);
+if (entry->d_type == DT_DIR) {
+    httpd_resp_sendstr_chunk(req, "/");
+}
+httpd_resp_sendstr_chunk(req, "\">");
+httpd_resp_sendstr_chunk(req, entry->d_name);
+// Display file type
+httpd_resp_sendstr_chunk(req, "</a></div><div class=\"two columns\" style=\"text-align: center;\">");
+httpd_resp_sendstr_chunk(req, entrytype);
+// Display file size
+httpd_resp_sendstr_chunk(req, "</div><div class=\"two columns\" style=\"text-align: right;\">");
+httpd_resp_sendstr_chunk(req, entrysize);
 ```
 
 ```C

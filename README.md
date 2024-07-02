@@ -113,6 +113,11 @@ button,.button {margin-bottom: 1rem; }input,textarea,select,fieldset {margin-bot
 ```
 
 <p>For each file saved on a file server, add table row and display file name and file size.</p>
+<p>Add table row</p>
+
+```C
+httpd_resp_sendstr_chunk(req, "<div class=\"row\"><div class=\"six columns\"><a href=\"");
+```
 
 ```C
 /* Iterate over all files / folders and fetch their names and sizes */

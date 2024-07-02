@@ -112,6 +112,13 @@ button,.button {margin-bottom: 1rem; }input,textarea,select,fieldset {margin-bot
     }
 ```
 
+```C
+// Identify entry type: folder or file
+entrytype = (entry->d_type == DT_DIR ? "directory" : "file");
+// Calculate file size, in Kb
+sprintf(entrysize, "%ld", entry_stat.st_size/1024);
+```
+
 <p>For each file saved on a file server, add table row and display file name and file size. The following line of code at the beginning of the wile loop adds new row to the table.</p>
 
 ```C

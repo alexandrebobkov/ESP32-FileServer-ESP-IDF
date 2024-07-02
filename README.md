@@ -21,7 +21,7 @@
 > * D14 -> CLK
 
 
-## Formatting
+## Landing Page Formatting
 <p>The landing page is formatted according to the CSS file below:</p>
 
 ```css

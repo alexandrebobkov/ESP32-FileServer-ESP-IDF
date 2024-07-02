@@ -6,7 +6,6 @@
 </p>
 
 ## Important files
-
 <ul>
     <li>main.c</li>
     <li>file_server.c</li>

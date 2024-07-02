@@ -112,8 +112,8 @@ button,.button {margin-bottom: 1rem; }input,textarea,select,fieldset {margin-bot
 
 ```C
 /* Iterate over all files / folders and fetch their names and sizes */
-    while ((entry = readdir(dir)) != NULL) {
-    }
+while ((entry = readdir(dir)) != NULL) {
+}
 ```
 
 ```C

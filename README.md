@@ -83,7 +83,8 @@ button,.button {margin-bottom: 1rem; }input,textarea,select,fieldset {margin-bot
     <head><meta charset=\"utf-8\">
         <title>ESP32 Private Portable Files Server</title>
         <style></style>
-        <link href=\"//fonts.googleapis.com/css?family=Raleway:400,300,600\" rel=\"stylesheet\" type=\"text/css\">
+        <link href=\"//fonts.googleapis.com/css?family=Raleway:400,300,600\" 
+            rel=\"stylesheet\" type=\"text/css\">
     </head>
     <html>
         <body>

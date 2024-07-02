@@ -20,12 +20,6 @@
 > * D13 -> CS
 > * D14 -> CLK
 
-<ul>
-    <li>D15 -> MOSI</li>
-    <li>D4 -> MISO</li>
-    <li>D13 -> CS</li>
-    <li>D14 -> CLK</li>
-</ul>
 
 ## Formatting
 <p>The landing page is formatted according to the CSS file below:</p>

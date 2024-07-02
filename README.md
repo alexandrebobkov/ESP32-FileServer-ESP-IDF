@@ -157,32 +157,32 @@ httpd_resp_sendstr_chunk(req, entrysize);
 
 ```C
 /* Iterate over all files / folders and fetch their names and sizes */
-    while ((entry = readdir(dir)) != NULL) {
-         // Send chunk of HTML file containing table entries with file name and size 
-        //httpd_resp_sendstr_chunk(req, "<tr><td><a href=\"");
-        // Display file name
-        httpd_resp_sendstr_chunk(req, "<div class=\"row\"><div class=\"six columns\"><a href=\"");
-        httpd_resp_sendstr_chunk(req, req->uri);
-        httpd_resp_sendstr_chunk(req, entry->d_name);
-        if (entry->d_type == DT_DIR) {
-            httpd_resp_sendstr_chunk(req, "/");
-        }
-        httpd_resp_sendstr_chunk(req, "\">");
-        httpd_resp_sendstr_chunk(req, entry->d_name);
-        // Display file type
-        httpd_resp_sendstr_chunk(req, "</a></div><div class=\"two columns\" style=\"text-align: center;\">");
-        httpd_resp_sendstr_chunk(req, entrytype);
-        // Display file size
-        httpd_resp_sendstr_chunk(req, "</div><div class=\"two columns\" style=\"text-align: right;\">");
-        httpd_resp_sendstr_chunk(req, entrysize);
-        // Display file delete button
-        httpd_resp_sendstr_chunk(req, "</div><div class=\"two columns\">");
-        httpd_resp_sendstr_chunk(req, "<form method=\"post\" action=\"/delete");
-        httpd_resp_sendstr_chunk(req, req->uri);
-        httpd_resp_sendstr_chunk(req, entry->d_name);
-        httpd_resp_sendstr_chunk(req, "\"><button type=\"submit\" class=\"button-delete\">Delete</button></form>");
-        //httpd_resp_sendstr_chunk(req, "</td></tr>\n");
-        // Close row div
-        httpd_resp_sendstr_chunk(req, "</div></div>\n");
+while ((entry = readdir(dir)) != NULL) {
+    // Send chunk of HTML file containing table entries with file name and size 
+    //httpd_resp_sendstr_chunk(req, "<tr><td><a href=\"");
+    // Display file name
+    httpd_resp_sendstr_chunk(req, "<div class=\"row\"><div class=\"six columns\"><a href=\"");
+    httpd_resp_sendstr_chunk(req, req->uri);
+    httpd_resp_sendstr_chunk(req, entry->d_name);
+    if (entry->d_type == DT_DIR) {
+        httpd_resp_sendstr_chunk(req, "/");
     }
+    httpd_resp_sendstr_chunk(req, "\">");
+    httpd_resp_sendstr_chunk(req, entry->d_name);
+    // Display file type
+    httpd_resp_sendstr_chunk(req, "</a></div><div class=\"two columns\" style=\"text-align: center;\">");
+    httpd_resp_sendstr_chunk(req, entrytype);
+    // Display file size
+    httpd_resp_sendstr_chunk(req, "</div><div class=\"two columns\" style=\"text-align: right;\">");
+    httpd_resp_sendstr_chunk(req, entrysize);
+    // Display file delete button
+    httpd_resp_sendstr_chunk(req, "</div><div class=\"two columns\">");
+    httpd_resp_sendstr_chunk(req, "<form method=\"post\" action=\"/delete");
+    httpd_resp_sendstr_chunk(req, req->uri);
+    httpd_resp_sendstr_chunk(req, entry->d_name);
+    httpd_resp_sendstr_chunk(req, "\"><button type=\"submit\" class=\"button-delete\">Delete</button></form>");
+    //httpd_resp_sendstr_chunk(req, "</td></tr>\n");
+    // Close row div
+    httpd_resp_sendstr_chunk(req, "</div></div>\n");
+}
 ```

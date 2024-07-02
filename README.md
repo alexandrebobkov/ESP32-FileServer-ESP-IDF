@@ -104,21 +104,20 @@ button,.button {margin-bottom: 1rem; }input,textarea,select,fieldset {margin-bot
 
 <h3>Files Table</h3>
 
+<p>A while loop scans through the files saved on a file server.</p>
+
 ```C
 /* Iterate over all files / folders and fetch their names and sizes */
     while ((entry = readdir(dir)) != NULL) {
-        entrytype = (entry->d_type == DT_DIR ? "directory" : "file");
+    }
+```
 
-        strlcpy(entrypath + dirpath_len, entry->d_name, sizeof(entrypath) - dirpath_len);
-        if (stat(entrypath, &entry_stat) == -1) {
-            ESP_LOGE(TAG, "Failed to stat %s : %s", entrytype, entry->d_name);
-            continue;
-        }
-        sprintf(entrysize, "%ld", entry_stat.st_size/1024);
-        //ESP_LOGI(TAG, "Found %s : %s (%s bytes)", entrytype, entry->d_name, entrysize);
-        ESP_LOGI(TAG, "Found %s : %s (%s KB)", entrytype, entry->d_name, entrysize);
+<p>For each file saved on a file server, add table row and display file name and file size.</p>
 
-        // Send chunk of HTML file containing table entries with file name and size 
+```C
+/* Iterate over all files / folders and fetch their names and sizes */
+    while ((entry = readdir(dir)) != NULL) {
+         // Send chunk of HTML file containing table entries with file name and size 
         //httpd_resp_sendstr_chunk(req, "<tr><td><a href=\"");
         // Display file name
         httpd_resp_sendstr_chunk(req, "<div class=\"row\"><div class=\"six columns\"><a href=\"");

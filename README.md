@@ -16,9 +16,8 @@
 
 ### Key wiring:
 > [!NOTE]
-> D15 -> MOSI
->
-> D4 -> MISO
+> * D15 -> MOSI
+> * D4 -> MISO
 >
 > D13 -> CS
 >

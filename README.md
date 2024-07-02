@@ -17,8 +17,8 @@ Key wiring:</br>
     </ul>
 </p>
 
-<p>CSS file</p>
-<p>Web-page is formatted according to the CSS file below:</p>
+<h2>Formatting</h2>
+<p>The landing page is formatted according to the CSS file below:</p>
 
 ```css
 
@@ -99,4 +99,49 @@ button,.button {margin-bottom: 1rem; }input,textarea,select,fieldset {margin-bot
             </div>
         </body>
     </html>
+```
+
+<h3>Files Table</h3>
+
+```C
+/* Iterate over all files / folders and fetch their names and sizes */
+    while ((entry = readdir(dir)) != NULL) {
+        entrytype = (entry->d_type == DT_DIR ? "directory" : "file");
+
+        strlcpy(entrypath + dirpath_len, entry->d_name, sizeof(entrypath) - dirpath_len);
+        if (stat(entrypath, &entry_stat) == -1) {
+            ESP_LOGE(TAG, "Failed to stat %s : %s", entrytype, entry->d_name);
+            continue;
+        }
+        sprintf(entrysize, "%ld", entry_stat.st_size/1024);
+        //ESP_LOGI(TAG, "Found %s : %s (%s bytes)", entrytype, entry->d_name, entrysize);
+        ESP_LOGI(TAG, "Found %s : %s (%s KB)", entrytype, entry->d_name, entrysize);
+
+        // Send chunk of HTML file containing table entries with file name and size 
+        //httpd_resp_sendstr_chunk(req, "<tr><td><a href=\"");
+        // Display file name
+        httpd_resp_sendstr_chunk(req, "<div class=\"row\"><div class=\"six columns\"><a href=\"");
+        httpd_resp_sendstr_chunk(req, req->uri);
+        httpd_resp_sendstr_chunk(req, entry->d_name);
+        if (entry->d_type == DT_DIR) {
+            httpd_resp_sendstr_chunk(req, "/");
+        }
+        httpd_resp_sendstr_chunk(req, "\">");
+        httpd_resp_sendstr_chunk(req, entry->d_name);
+        // Display file type
+        httpd_resp_sendstr_chunk(req, "</a></div><div class=\"two columns\" style=\"text-align: center;\">");
+        httpd_resp_sendstr_chunk(req, entrytype);
+        // Display file size
+        httpd_resp_sendstr_chunk(req, "</div><div class=\"two columns\" style=\"text-align: right;\">");
+        httpd_resp_sendstr_chunk(req, entrysize);
+        // Display file delete button
+        httpd_resp_sendstr_chunk(req, "</div><div class=\"two columns\">");
+        httpd_resp_sendstr_chunk(req, "<form method=\"post\" action=\"/delete");
+        httpd_resp_sendstr_chunk(req, req->uri);
+        httpd_resp_sendstr_chunk(req, entry->d_name);
+        httpd_resp_sendstr_chunk(req, "\"><button type=\"submit\" class=\"button-delete\">Delete</button></form>");
+        //httpd_resp_sendstr_chunk(req, "</td></tr>\n");
+        // Close row div
+        httpd_resp_sendstr_chunk(req, "</div></div>\n");
+    }
 ```

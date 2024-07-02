@@ -18,6 +18,7 @@ Key wiring:</br>
 </p>
 
 <p>CSS file</p>
+<p>Web-page is formatted according to the CSS file below:</p>
 
 ```css
 
@@ -74,7 +75,8 @@ th,td {padding: 12px 15px;text-align: left;border-bottom: 1px solid #E1E1E1; }th
 button,.button {margin-bottom: 1rem; }input,textarea,select,fieldset {margin-bottom: 1.5rem; }pre,blockquote,dl,figure,table,p,ul,ol,form {margin-bottom: 2.5rem; }
 .container:after,.row:after,.u-cf {content: "";display: table;clear: both; }
 ```
-<p>HTML page</p>
+<p>Landing Page</p>
+<p>HTML for the Landing Page is divided into three sections. Top section loads upper section of the landing page, including table header. The middle section contains table rows, which are populated by C code for each file stored on a file server. Finally, the bottom section contains landing page footer and closing html tags.</p>
 
 ```html
 <!DOCTYPE html>
